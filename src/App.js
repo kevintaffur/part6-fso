@@ -16,10 +16,20 @@ const App = () => {
     dispatch(createAnecdote(anecdote));
   };
 
+  const sortByVotes = (anecdote1, anecdote2) => {
+    if (anecdote1.votes > anecdote2.votes) {
+      return -1;
+    }
+    if (anecdote1.votes < anecdote2.votes) {
+      return 1;
+    }
+    return 0;
+  };
+
   return (
     <div>
       <h2>Anecdotes</h2>
-      {anecdotes.map(anecdote =>
+      {anecdotes.sort(sortByVotes).map(anecdote =>
         <div key={anecdote.id}>
           <div>
             {anecdote.content}
