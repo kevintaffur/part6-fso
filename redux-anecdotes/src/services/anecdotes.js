@@ -15,6 +15,6 @@ const create = async (content) => {
 
   const response = await axios.post(baseUrl, obj);
   return response.data;
-}
+};
 
 export default { getAll, create };
