@@ -16,8 +16,7 @@ const anecdoteSlice = createSlice({
       });
     },
     createAnecdote(state, action) {
-      // const anecdote = asObject(action.payload);
-      // return [...state, anecdote];
+      return [...state, action.payload];
     },
     setAnecdotes(state, action) {
       return action.payload;
